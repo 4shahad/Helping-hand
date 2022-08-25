@@ -1,0 +1,1257 @@
+{
+	"info": {
+		"_postman_id": "b457a9d3-f4b9-449d-8ad8-a1e6145f176d",
+		"name": "Hand Helping",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22738302"
+	},
+	"item": [
+		{
+			"name": "Register a Patient Account",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"raghad\",\r\n    \"patientid\":123456789,\r\n    \"password\":\"12345\",\r\n    \"role\":\"Patients\",\r\n\"patientname\":\"raghad rashed\",\r\n\"patientphonenumber\":\"0500193756\",\r\n\"patientrelativephonenumber\":\"0595833309\",\r\n\"patientemail\":\"alshahad.rashed@gmail.com\",\r\n\"patienthealthstatus\":\"i have broke in my leg and i want to go to the hospital\",\r\n\"patientlocation\":\"Riyadh\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login to Patient Account",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "raghad",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Git Patient information Account",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "raghad",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ipa/v1/patient/account?patientid=123456789",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipa",
+						"v1",
+						"patient",
+						"account"
+					],
+					"query": [
+						{
+							"key": "patientid",
+							"value": "123456789"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Contact for Patient",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ipa/v1/patient/update/contact?phoneNumber=0506478689&RelativePhoneNumber=0587654798&Email=raghad@gmail.com&id=123456789",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipa",
+						"v1",
+						"patient",
+						"update",
+						"contact"
+					],
+					"query": [
+						{
+							"key": "phoneNumber",
+							"value": "0506478689"
+						},
+						{
+							"key": "RelativePhoneNumber",
+							"value": "0587654798"
+						},
+						{
+							"key": "Email",
+							"value": "raghad@gmail.com"
+						},
+						{
+							"key": "id",
+							"value": "123456789"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Patient Location",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ipa/v1/patient/update/location?location=Aflaj&id=123456789",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipa",
+						"v1",
+						"patient",
+						"update",
+						"location"
+					],
+					"query": [
+						{
+							"key": "location",
+							"value": "Aflaj"
+						},
+						{
+							"key": "id",
+							"value": "123456789"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Patient Health Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ipa/v1/patient/update/health/status?HealthStatus=i have brith proplems and i need ocsojen&id=123456789",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipa",
+						"v1",
+						"patient",
+						"update",
+						"health",
+						"status"
+					],
+					"query": [
+						{
+							"key": "HealthStatus",
+							"value": "i have brith proplems and i need ocsojen"
+						},
+						{
+							"key": "id",
+							"value": "123456789"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient git  hospital by location",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "raghad",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/hospital/git/location?Location=Aflaj",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"hospital",
+						"git",
+						"location"
+					],
+					"query": [
+						{
+							"key": "Location",
+							"value": "Aflaj"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient git  ambulance by location",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "raghad",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ambulance/git/location?Location=Aflaj",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ambulance",
+						"git",
+						"location"
+					],
+					"query": [
+						{
+							"key": "Location",
+							"value": "Aflaj"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient git all hospital",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "raghad",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/hospital/all/hospitals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"hospital",
+						"all",
+						"hospitals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient git all ambulance",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "raghad",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ambulance/all/ambulance/center",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ambulance",
+						"all",
+						"ambulance",
+						"center"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register a Hospital Account",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"username\":\"hos1\",\r\n    \"password\":\"12345\",\r\n    \"role\":\"Hospital\",\r\n    \"hospitalname\":\"king\",\r\n    \"hospitalstatus\":\"avilable\",\r\n    \"hospitallocation\":\"Riyadh\",\r\n    \"hospitalphonenumber\":\"0555555555\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login to Hospital Account",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "hos1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hospital git his Information Account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/hospital/account?name=king",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"hospital",
+						"account"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "king"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hospital update his status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/hospital/update/status?name=King&status=non avilable",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"hospital",
+						"update",
+						"status"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "King"
+						},
+						{
+							"key": "status",
+							"value": "non avilable"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " Register an  Ambulance Account",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"username\":\"ambu1\",\r\n    \"password\":\"12345\",\r\n    \"role\":\"AmbulanceCenter\",\r\n    \"ambulancename\":\"fahad\",\r\n    \"ambulancestatus\":\"un avilable\",\r\n    \"ambulancelocation\":\"Riyadh\",\r\n    \"ambulancephonenumber\":\"0555555555\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login to Ambulance Account",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "67890",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ambu1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ambulance git his Information Account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ambulance/account?name=fahad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ambulance",
+						"account"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "fahad"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ambulance update his status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/ambulance/update/status?name=fahad&status=besy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"ambulance",
+						"update",
+						"status"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "fahad"
+						},
+						{
+							"key": "status",
+							"value": "besy"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient add order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ordert\":\"Emergency\",\r\n    \"patientid\":123456789,\r\n    \"patientname\":\"raghad rashed\",\r\n    \"patientgender\":\"female\",\r\n    \"patientage\":22,\r\n    \"patienthealthstatus\":\"i have broke in my leg and i want to go to the hospital\",\r\n    \"patientPhoneNumber\":\"0500193756\",\r\n    \"patientrelativephonenumber\":\"0595833309\",\r\n    \"patientemail\":\"alshahad.rashed@gmail.com\",\r\n    \"patientlocation\":\"Riyadh\",\r\n    \"ambulancename\":\"fahad\",\r\n    \"hospitalname\":\"king\",\r\n    \"ddestination\":\"to the king hospital\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient git and see  order status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/git?patientId=123456789",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"git"
+					],
+					"query": [
+						{
+							"key": "patientId",
+							"value": "123456789"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient delete order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/delete?patientId=123456789&ordersId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "patientId",
+							"value": "123456789"
+						},
+						{
+							"key": "ordersId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient update order destination ",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/destination/location?patientId=123456789&ordersId=3&destination=to the king fahad hospital",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"destination",
+						"location"
+					],
+					"query": [
+						{
+							"key": "patientId",
+							"value": "123456789"
+						},
+						{
+							"key": "ordersId",
+							"value": "3"
+						},
+						{
+							"key": "destination",
+							"value": "to the king fahad hospital"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient update his Location",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/update/patient/location?patientId=123456789&ordersId=2&patientLocation=Aflaj",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"update",
+						"patient",
+						"location"
+					],
+					"query": [
+						{
+							"key": "patientId",
+							"value": "123456789"
+						},
+						{
+							"key": "ordersId",
+							"value": "2"
+						},
+						{
+							"key": "patientLocation",
+							"value": "Aflaj"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient update his health status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/update/health/status?patientId=123456789&ordersId=2&healthStatus=heeeellllpppppp",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"update",
+						"health",
+						"status"
+					],
+					"query": [
+						{
+							"key": "patientId",
+							"value": "123456789"
+						},
+						{
+							"key": "ordersId",
+							"value": "2"
+						},
+						{
+							"key": "healthStatus",
+							"value": "heeeellllpppppp"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient update his order type",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/update/order/type?patientId=123456789&ordersId=2&orderType=NotEmergency",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"update",
+						"order",
+						"type"
+					],
+					"query": [
+						{
+							"key": "patientId",
+							"value": "123456789"
+						},
+						{
+							"key": "ordersId",
+							"value": "2"
+						},
+						{
+							"key": "orderType",
+							"value": "NotEmergency"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient update his order Ambulance center",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/update/ambulance/info?patientId=123456789&ordersId=2&ambulanceName=khalid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"update",
+						"ambulance",
+						"info"
+					],
+					"query": [
+						{
+							"key": "patientId",
+							"value": "123456789"
+						},
+						{
+							"key": "ordersId",
+							"value": "2"
+						},
+						{
+							"key": "ambulanceName",
+							"value": "khalid"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patient update his order hospital need",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/update/hospital/info?patientId=123456789&ordersId=2&hospitalName=prince",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"update",
+						"hospital",
+						"info"
+					],
+					"query": [
+						{
+							"key": "patientId",
+							"value": "123456789"
+						},
+						{
+							"key": "ordersId",
+							"value": "2"
+						},
+						{
+							"key": "hospitalName",
+							"value": "prince"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hospital update the accept status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/update/accept/status/hospital?orderId=3&acceptStatus=true&hospitalName=king",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"update",
+						"accept",
+						"status",
+						"hospital"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "3"
+						},
+						{
+							"key": "acceptStatus",
+							"value": "true"
+						},
+						{
+							"key": "hospitalName",
+							"value": "king"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hospital git all orders for it",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/git/hospital?hospitalName=king",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"git",
+						"hospital"
+					],
+					"query": [
+						{
+							"key": "hospitalName",
+							"value": "king"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ambulance git all orders for it",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/git/ambulance?ambulanceName=fahad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"git",
+						"ambulance"
+					],
+					"query": [
+						{
+							"key": "ambulanceName",
+							"value": "fahad"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ambulance update the accept status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/update/accept/status/ambulance?orderId=2&acceptStatus=true&ambulanceName=fahad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"update",
+						"accept",
+						"status",
+						"ambulance"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "2"
+						},
+						{
+							"key": "acceptStatus",
+							"value": "true"
+						},
+						{
+							"key": "ambulanceName",
+							"value": "fahad"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update password for all users",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ambu2",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/user/update/password?password=67890&username=ambu1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"user",
+						"update",
+						"password"
+					],
+					"query": [
+						{
+							"key": "password",
+							"value": "67890"
+						},
+						{
+							"key": "username",
+							"value": "ambu1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
